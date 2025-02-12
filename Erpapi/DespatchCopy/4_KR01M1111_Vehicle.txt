@@ -1,0 +1,48 @@
+1. File the bid
+/api/Bidding/bidfiling
+{
+          "bidId": "47",
+          "bidderId": "35",
+          "bidAmount": 4950,
+          "remarks": "Transporter 1 I assure that it would be done in the said time",
+          "createdBy": "35",
+          "tranType": "B"
+        }
+
+2. get bidder details there will be a fdbidderid 63
+/api/Bidding/biddingDetailsView
+ {
+          "bidid": "47",
+          "userId": "27",
+          "origin": "",
+          "destination": "",
+          "usertype": "2",
+          "type": "D",
+          "fromDate": "",
+          "toDate": "",
+          "status": ""
+        }
+
+3. file the bid with same details
+/api/Bidding/bidfiling
+{
+          "bidId": "47",
+          "bidderId": "35",
+          "bidAmount": 4950,
+          "remarks": "Transporter 1 I assure that it would be done in the said time",
+          "createdBy": "35",
+          "tranType": "B"
+        }
+4.  get bidder details there now the fdbidderid will get incremented to 64
+/api/Bidding/biddingDetailsView
+ {
+          "bidid": "47",
+          "userId": "27",
+          "origin": "",
+          "destination": "",
+          "usertype": "2",
+          "type": "D",
+          "fromDate": "",
+          "toDate": "",
+          "status": ""
+        }

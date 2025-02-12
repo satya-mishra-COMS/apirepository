@@ -1,0 +1,50 @@
+[
+  {
+    "ContainingType": "Erpapi.Controllers.AdminController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/Admin/ChangePassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "changePassworddto",
+        "Type": "Models.Admin.ChangePassword",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Erpapi.Controllers.AdminController",
+    "Method": "Login",
+    "RelativePath": "api/Admin/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "logindto",
+        "Type": "Models.Admin.Login",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Erpapi.Controllers.AdminController",
+    "Method": "CreateUser",
+    "RelativePath": "api/Admin/RegisterUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userRegisterdto",
+        "Type": "Models.Admin.UserRegister",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

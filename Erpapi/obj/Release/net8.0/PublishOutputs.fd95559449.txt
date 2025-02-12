@@ -1,0 +1,16 @@
+D:\projects\Erpapi\Erpapi\obj\Release\net8.0\PubTmp\Out\Erpapi.exe
+D:\projects\Erpapi\Erpapi\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+D:\projects\Erpapi\Erpapi\obj\Release\net8.0\PubTmp\Out\appsettings.json
+D:\projects\Erpapi\Erpapi\obj\Release\net8.0\PubTmp\Out\Erpapi.dll
+D:\projects\Erpapi\Erpapi\obj\Release\net8.0\PubTmp\Out\Erpapi.deps.json
+D:\projects\Erpapi\Erpapi\obj\Release\net8.0\PubTmp\Out\Erpapi.runtimeconfig.json
+D:\projects\Erpapi\Erpapi\obj\Release\net8.0\PubTmp\Out\Erpapi.pdb
+D:\projects\Erpapi\Erpapi\obj\Release\net8.0\PubTmp\Out\Microsoft.Extensions.Options.dll
+D:\projects\Erpapi\Erpapi\obj\Release\net8.0\PubTmp\Out\Microsoft.OpenApi.dll
+D:\projects\Erpapi\Erpapi\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+D:\projects\Erpapi\Erpapi\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\projects\Erpapi\Erpapi\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\projects\Erpapi\Erpapi\obj\Release\net8.0\PubTmp\Out\dbrepository.dll
+D:\projects\Erpapi\Erpapi\obj\Release\net8.0\PubTmp\Out\Models.dll
+D:\projects\Erpapi\Erpapi\obj\Release\net8.0\PubTmp\Out\dbrepository.pdb
+D:\projects\Erpapi\Erpapi\obj\Release\net8.0\PubTmp\Out\Models.pdb

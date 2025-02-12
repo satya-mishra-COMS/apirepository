@@ -1,0 +1,13 @@
+D:\projects\Erpapi\Models\bin\Release\net8.0\Models.deps.json
+D:\projects\Erpapi\Models\bin\Release\net8.0\Models.dll
+D:\projects\Erpapi\Models\bin\Release\net8.0\Models.pdb
+D:\projects\Erpapi\Models\obj\Release\net8.0\Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\Erpapi\Models\obj\Release\net8.0\Models.AssemblyInfoInputs.cache
+D:\projects\Erpapi\Models\obj\Release\net8.0\Models.AssemblyInfo.cs
+D:\projects\Erpapi\Models\obj\Release\net8.0\Models.csproj.CoreCompileInputs.cache
+D:\projects\Erpapi\Models\obj\Release\net8.0\Models.sourcelink.json
+D:\projects\Erpapi\Models\obj\Release\net8.0\Models.dll
+D:\projects\Erpapi\Models\obj\Release\net8.0\refint\Models.dll
+D:\projects\Erpapi\Models\obj\Release\net8.0\Models.pdb
+D:\projects\Erpapi\Models\obj\Release\net8.0\ref\Models.dll
+D:\projects\Erpapi\Models\obj\Release\net8.0\Models.csproj.AssemblyReference.cache

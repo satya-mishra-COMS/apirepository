@@ -1,0 +1,16 @@
+D:\projects\Erpapi\dbrepository\bin\Release\net8.0\dbrepository.deps.json
+D:\projects\Erpapi\dbrepository\bin\Release\net8.0\dbrepository.dll
+D:\projects\Erpapi\dbrepository\bin\Release\net8.0\dbrepository.pdb
+D:\projects\Erpapi\dbrepository\bin\Release\net8.0\Models.dll
+D:\projects\Erpapi\dbrepository\bin\Release\net8.0\Models.pdb
+D:\projects\Erpapi\dbrepository\obj\Release\net8.0\dbrepository.csproj.AssemblyReference.cache
+D:\projects\Erpapi\dbrepository\obj\Release\net8.0\dbrepository.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\Erpapi\dbrepository\obj\Release\net8.0\dbrepository.AssemblyInfoInputs.cache
+D:\projects\Erpapi\dbrepository\obj\Release\net8.0\dbrepository.AssemblyInfo.cs
+D:\projects\Erpapi\dbrepository\obj\Release\net8.0\dbrepository.csproj.CoreCompileInputs.cache
+D:\projects\Erpapi\dbrepository\obj\Release\net8.0\dbrepository.sourcelink.json
+D:\projects\Erpapi\dbrepository\obj\Release\net8.0\dbreposi.7973EDC3.Up2Date
+D:\projects\Erpapi\dbrepository\obj\Release\net8.0\dbrepository.dll
+D:\projects\Erpapi\dbrepository\obj\Release\net8.0\refint\dbrepository.dll
+D:\projects\Erpapi\dbrepository\obj\Release\net8.0\dbrepository.pdb
+D:\projects\Erpapi\dbrepository\obj\Release\net8.0\ref\dbrepository.dll

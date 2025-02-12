@@ -1,0 +1,140 @@
+1. Rejection flow isn't working as expected
+
+steps to reproduce =>
+	1. create a bid
+	/api/Bidding/bidfilingUpdate
+	{
+          "bidid": 0,
+          "commodity": "Thing",
+          "packagetype": "BOX",
+          "qty": 666,
+          "cargotype": "HAZ",
+          "origin": "Delhi",
+          "destination": "chennai",
+          "fromamount": 4500,
+          "toamount": 5600,
+          "requiredon": "2024-12-30",
+          "remarks": "remarks",
+          "createdBy": "27",
+          "trtype": "A",
+        }
+	
+	2. place a bid from two bidders
+	 take bid id from above created bid
+	change bidder id as well I you want a differnt bidder to place on his bid
+	/api/Bidding/bidfiling
+	{
+          "bidId": "",
+          "bidderId": "28",
+          "bidAmount": 4950,
+          "remarks": "Remarks",
+          "createdBy": "28",
+          "tranType": "B"
+        }
+	3. reject the bid
+	take bid id from above generated bid
+	if bidder 28 has placed a bid
+	/api/Bidding/biddingProcess
+	{
+          "biddid": "",
+          "bidderid": "28",
+          "remarks": "remarks",
+          "createdBy": "27",
+          "trtype": "R"
+        }
+	4. go on the same bid and get bid details you will find no bidder is available
+	get bidid from above created bid 
+	{
+          "bidid": "",
+          "userId": "27",
+          "origin": "",
+          "destination": "",
+          "usertype": "2",
+          "type": "D",
+          "fromDate": "",
+          "toDate": "",
+          "status": ""
+        }
+
+
+
+
+2. reconsider flow isn't working as expected
+
+steps to reproduce =>
+	1. create a bid
+	/api/Bidding/bidfilingUpdate
+	{
+          "bidid": 0,
+          "commodity": "Thing",
+          "packagetype": "BOX",
+          "qty": 666,
+          "cargotype": "HAZ",
+          "origin": "Delhi",
+          "destination": "chennai",
+          "fromamount": 4500,
+          "toamount": 5600,
+          "requiredon": "2024-12-30",
+          "remarks": "remarks",
+          "createdBy": "27",
+          "trtype": "A",
+        }
+	
+	2. place a bid from bidder
+	 take bid id from above created bid
+	/api/Bidding/bidfiling
+	{
+          "bidId": "",
+          "bidderId": "28",
+          "bidAmount": 4950,
+          "remarks": "Remarks",
+          "createdBy": "28",
+          "tranType": "B"
+        }
+	3. reconsider the bid the bid
+	take bid id from above generated bid
+	if bidder 28 has placed a bid
+	/api/Bidding/biddingProcess
+	{
+          "biddid": "",
+          "bidderid": "28",
+          "remarks": "remarks",
+          "createdBy": "27",
+          "trtype": "R"
+        }
+	4. try place a bid from bidder
+	 take bid id from above created bid
+	change bidder id as well I you want a differnt bidder to place on his bid
+	/api/Bidding/bidfiling
+	{
+          "bidId": "",
+          "bidderId": "28",
+          "bidAmount": 4950,
+          "remarks": "Remarks",
+          "createdBy": "28",
+          "tranType": "B"
+        }	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
