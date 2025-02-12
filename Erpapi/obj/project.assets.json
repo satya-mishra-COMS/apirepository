@@ -3404,11 +3404,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Bidding-satya\\Erpapi\\Erpapi\\Erpapi.csproj",
+      "projectUniqueName": "D:\\Bidding-satya\\codes\\Erpapi\\Erpapi.csproj",
       "projectName": "Erpapi",
-      "projectPath": "D:\\Bidding-satya\\Erpapi\\Erpapi\\Erpapi.csproj",
+      "projectPath": "D:\\Bidding-satya\\codes\\Erpapi\\Erpapi.csproj",
       "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-      "outputPath": "D:\\Bidding-satya\\Erpapi\\Erpapi\\obj\\",
+      "outputPath": "D:\\Bidding-satya\\codes\\Erpapi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3430,11 +3430,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Bidding-satya\\Erpapi\\dbrepository\\dbrepository.csproj": {
-              "projectPath": "D:\\Bidding-satya\\Erpapi\\dbrepository\\dbrepository.csproj"
+            "D:\\Bidding-satya\\codes\\dbrepository\\dbrepository.csproj": {
+              "projectPath": "D:\\Bidding-satya\\codes\\dbrepository\\dbrepository.csproj"
             },
-            "D:\\Bidding-satya\\Erpapi\\Models\\Models.csproj": {
-              "projectPath": "D:\\Bidding-satya\\Erpapi\\Models\\Models.csproj"
+            "D:\\Bidding-satya\\codes\\Models\\Models.csproj": {
+              "projectPath": "D:\\Bidding-satya\\codes\\Models\\Models.csproj"
             }
           }
         }

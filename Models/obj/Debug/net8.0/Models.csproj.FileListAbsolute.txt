@@ -34,3 +34,16 @@ D:\Bidding-satya\Erpapi\Models\obj\Debug\net8.0\Models.dll
 D:\Bidding-satya\Erpapi\Models\obj\Debug\net8.0\refint\Models.dll
 D:\Bidding-satya\Erpapi\Models\obj\Debug\net8.0\Models.pdb
 D:\Bidding-satya\Erpapi\Models\obj\Debug\net8.0\ref\Models.dll
+D:\Bidding-satya\codes\Models\bin\Debug\net8.0\Models.deps.json
+D:\Bidding-satya\codes\Models\bin\Debug\net8.0\Models.dll
+D:\Bidding-satya\codes\Models\bin\Debug\net8.0\Models.pdb
+D:\Bidding-satya\codes\Models\obj\Debug\net8.0\Models.csproj.AssemblyReference.cache
+D:\Bidding-satya\codes\Models\obj\Debug\net8.0\Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Bidding-satya\codes\Models\obj\Debug\net8.0\Models.AssemblyInfoInputs.cache
+D:\Bidding-satya\codes\Models\obj\Debug\net8.0\Models.AssemblyInfo.cs
+D:\Bidding-satya\codes\Models\obj\Debug\net8.0\Models.csproj.CoreCompileInputs.cache
+D:\Bidding-satya\codes\Models\obj\Debug\net8.0\Models.sourcelink.json
+D:\Bidding-satya\codes\Models\obj\Debug\net8.0\Models.dll
+D:\Bidding-satya\codes\Models\obj\Debug\net8.0\refint\Models.dll
+D:\Bidding-satya\codes\Models\obj\Debug\net8.0\Models.pdb
+D:\Bidding-satya\codes\Models\obj\Debug\net8.0\ref\Models.dll
