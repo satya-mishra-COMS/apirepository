@@ -302,5 +302,108 @@ namespace dbrepository
             return retData;
         }
 
+        public PaymentViewData PaymentView(PaymentInsertParam  paymentInsertParam)
+        {
+            var data = new ResponseStatus();
+            DataTable dt = new DataTable();
+            var retData = new PaymentViewData();
+            List<PaymentView> paymentViews = new List<PaymentView>();
+
+            try
+            {
+
+                MySqlParameter p0 = new MySqlParameter("v_pbiddid", MySqlDbType.VarChar) { Value = paymentInsertParam.BidId };
+                MySqlParameter p1 = new MySqlParameter("v_pdate", MySqlDbType.VarChar) { Value = paymentInsertParam.DateVal };
+                MySqlParameter p2 = new MySqlParameter("v_prefno", MySqlDbType.VarChar) { Value = paymentInsertParam.RefNo };
+                MySqlParameter p3 = new MySqlParameter("v_pamount", MySqlDbType.VarChar) { Value = paymentInsertParam.Amount };
+                MySqlParameter p4 = new MySqlParameter("v_ppaytype", MySqlDbType.VarChar) { Value = paymentInsertParam.PayType };
+                MySqlParameter p5 = new MySqlParameter("v_ppaidby", MySqlDbType.VarChar) { Value = paymentInsertParam.Paidby };
+                MySqlParameter p6 = new MySqlParameter("v_premarks", MySqlDbType.VarChar) { Value = paymentInsertParam.Remarks };
+                MySqlParameter p7 = new MySqlParameter("v_pcreateuser", MySqlDbType.VarChar) { Value = paymentInsertParam.CreatedUser };
+                MySqlParameter p8 = new MySqlParameter("v_ptrtype", MySqlDbType.VarChar) { Value = paymentInsertParam.TranType };
+                MySqlParameter p9 = new MySqlParameter("v_filepath", MySqlDbType.VarChar) { Value = string.Empty };
+
+
+
+                var lstMySqlparam = new List<MySqlParameter>();
+                lstMySqlparam.AddRange(new List<MySqlParameter>() { p0, p1, p2,p3,p4,p5,p6,p7,p8, p9 });
+
+
+                var ds = commonUtility.executeReaderProcedure("sp_PAYMENTINSERTUPDATE_API", lstMySqlparam, Convert.ToString(this.options.Value.DefaultConnection));
+
+                if (ds != null)
+                {
+                    if (ds.Tables.Count > 0)
+                    {
+                        dt = ds.Tables[0];
+                    }
+                    paymentViews = commonUtility.ConvertToList<PaymentView>(dt);
+
+
+
+                }
+
+                retData.data = paymentViews;
+
+
+
+
+                retData.StatusId = 1;
+                retData.StatusText = "Success";
+
+            }
+            catch (Exception ex)
+            {
+                retData.StatusId = 0;
+                retData.StatusText = ex.Message.ToString();
+                // dt.Rows.Add(data);
+                // throw;
+            }
+            return retData;
+        }
+
+
+        public ResponseStatus BidPaymentAdd(PaymentInsertParam paymentInsertParam,string filePath)
+        {
+            var data = new ResponseStatus();
+            try
+            {
+
+                MySqlParameter p0 = new MySqlParameter("v_pbiddid", MySqlDbType.VarChar) { Value = paymentInsertParam.BidId };
+                MySqlParameter p1 = new MySqlParameter("v_pdate", MySqlDbType.VarChar) { Value = paymentInsertParam.DateVal };
+                MySqlParameter p2 = new MySqlParameter("v_prefno", MySqlDbType.VarChar) { Value = paymentInsertParam.RefNo };
+                MySqlParameter p3 = new MySqlParameter("v_pamount", MySqlDbType.VarChar) { Value = paymentInsertParam.Amount };
+                MySqlParameter p4 = new MySqlParameter("v_ppaytype", MySqlDbType.VarChar) { Value = paymentInsertParam.PayType };
+                MySqlParameter p5 = new MySqlParameter("v_ppaidby", MySqlDbType.VarChar) { Value = paymentInsertParam.Paidby };
+                MySqlParameter p6 = new MySqlParameter("v_premarks", MySqlDbType.VarChar) { Value = paymentInsertParam.Remarks };
+                MySqlParameter p7 = new MySqlParameter("v_pcreateuser", MySqlDbType.VarChar) { Value = paymentInsertParam.CreatedUser };
+                MySqlParameter p8 = new MySqlParameter("v_ptrtype", MySqlDbType.VarChar) { Value = paymentInsertParam.TranType };
+                MySqlParameter p9 = new MySqlParameter("v_filepath", MySqlDbType.VarChar) { Value = filePath };
+
+
+                var lstMySqlparam = new List<MySqlParameter>();
+                lstMySqlparam.AddRange(new List<MySqlParameter>() { p0, p1, p2, p3, p4, p5, p6, p7, p8, p9 });
+
+
+                var ds = commonUtility.executeReaderProcedure("sp_PAYMENTINSERTUPDATE_API", lstMySqlparam, Convert.ToString(this.options.Value.DefaultConnection));
+
+                if (ds != null)
+                {
+                    data.StatusText = Convert.ToString(ds.Tables[0].Rows[0]["StatusText"]);
+                    data.StatusId = Convert.ToInt32(ds.Tables[0].Rows[0]["StatusId"]);
+                    data.CustomValue= Convert.ToString(ds.Tables[0].Rows[0]["CustomValue"]);
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                data.StatusText = ex.Message;
+                data.StatusId = 0;
+                // throw;
+            }
+            return data;
+        }
+
     }
 }

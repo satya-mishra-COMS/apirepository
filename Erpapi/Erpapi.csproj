@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <Folder Include="DespatchCopy\" />
+    <Folder Include="PaymentFiles\" />
   </ItemGroup>
 
 </Project>

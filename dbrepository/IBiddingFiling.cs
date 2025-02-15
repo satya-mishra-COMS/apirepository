@@ -18,6 +18,7 @@ namespace dbrepository
         lovData GetLovByType(string lovtype);
         BiddingDetailData BiddingDetailsView(BiddingDetailviewParam biddingDetailviewParam);
         ResponseStatus UpdateFeedback(FeedbackParam feedbackParam);
+       
 
 
 

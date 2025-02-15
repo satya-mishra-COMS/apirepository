@@ -38,27 +38,49 @@ namespace Erpapi.Controllers
             return Ok(this.vehicle.CommunicationView(communicationViewParam));
         }
 
-    //    [HttpGet]
-    //    public async Task<IActionResult> GetFileById()
-    //    {
-    //        string path = "\path\to\the\file.txt"
+        //    [HttpGet]
+        //    public async Task<IActionResult> GetFileById()
+        //    {
+        //        string path = "\path\to\the\file.txt"
 
 
-    //if (System.IO.File.Exists(path))
-    //        {
-    //            return File(System.IO.File.OpenRead(path), "application/octet-stream", Path.GetFileName(path));
-    //        }
-    //        return NotFound();
-    //    }
+        //if (System.IO.File.Exists(path))
+        //        {
+        //            return File(System.IO.File.OpenRead(path), "application/octet-stream", Path.GetFileName(path));
+        //        }
+        //        return NotFound();
+        //    }
 
         [HttpPost]
         [Route("vehicleView")]
         public IActionResult VehicleView(VehicleDetailParam vehicleDetailParam)
         {
             var getData = this.vehicle.VehicleView(vehicleDetailParam);
-           
+
             return Ok(getData);
         }
+        [HttpPost]
+        [Route("paymentInsert")]
+        public IActionResult AddPayment(PaymentInsertParam paymentInsertParam)
+        {
+
+            var files = new List<IFormFile>();
+            var vehiclePath = new VehiclePath();
+            var uploadtype = string.Empty;
+            string filePathval = string.Empty;
+
+            var result = this.vehicle.BidPaymentAdd(paymentInsertParam, paymentInsertParam.FilePath == null ? "" : paymentInsertParam.FilePath.FileName);
+            if (paymentInsertParam.FilePath != null && result.CustomValue != null)
+            {
+                //vehiclePath.InsurancePath = vehicleAddParam.InsurancePath.FileName;
+                files.Add(paymentInsertParam.FilePath);
+                filePathval = Paymentscreenshotupload(paymentInsertParam.FilePath, paymentInsertParam.BidId, paymentInsertParam.CreatedUser, result.CustomValue);
+            }
+
+
+            return Ok(this.vehicle.BidPaymentAdd(paymentInsertParam, filePathval));
+        }
+
         [HttpPost]
         [Route("addVehicle")]
         public IActionResult AddVehicle(VehicleAddParam vehicleAddParam)
@@ -73,35 +95,35 @@ namespace Erpapi.Controllers
                 //vehiclePath.InsurancePath = vehicleAddParam.InsurancePath.FileName;
                 files.Add(vehicleAddParam.InsurancePath);
                 uploadtype = "Insurance";
-                vehiclePath.InsurancePath=photoupload(vehicleAddParam.InsurancePath, vehicleAddParam.VehicleNo, vehicleAddParam.CreatedBy, uploadtype);
+                vehiclePath.InsurancePath = photoupload(vehicleAddParam.InsurancePath, vehicleAddParam.VehicleNo, vehicleAddParam.CreatedBy, uploadtype);
             }
             if (vehicleAddParam.RcCopyPath != null)
             {
                 //vehiclePath.RcCopyPath = vehicleAddParam.RcCopyPath.FileName;
                 files.Add(vehicleAddParam.RcCopyPath);
                 uploadtype = "RC";
-                vehiclePath.RcCopyPath=photoupload(vehicleAddParam.RcCopyPath, vehicleAddParam.VehicleNo, vehicleAddParam.CreatedBy, uploadtype);
+                vehiclePath.RcCopyPath = photoupload(vehicleAddParam.RcCopyPath, vehicleAddParam.VehicleNo, vehicleAddParam.CreatedBy, uploadtype);
             }
             if (vehicleAddParam.PollutionPath != null)
             {
                 //vehiclePath.PollutionPath = vehicleAddParam.PollutionPath.FileName;
                 files.Add(vehicleAddParam.PollutionPath);
                 uploadtype = "Pollution";
-                vehiclePath.PollutionPath=photoupload(vehicleAddParam.PollutionPath, vehicleAddParam.VehicleNo, vehicleAddParam.CreatedBy, uploadtype);
+                vehiclePath.PollutionPath = photoupload(vehicleAddParam.PollutionPath, vehicleAddParam.VehicleNo, vehicleAddParam.CreatedBy, uploadtype);
             }
             if (vehicleAddParam.PermitPath != null)
             {
                 //vehiclePath.PermitPath = vehicleAddParam.PermitPath.FileName;
                 files.Add(vehicleAddParam.PermitPath);
                 uploadtype = "Permit";
-                vehiclePath.PermitPath=photoupload(vehicleAddParam.PermitPath, vehicleAddParam.VehicleNo, vehicleAddParam.CreatedBy, uploadtype);
+                vehiclePath.PermitPath = photoupload(vehicleAddParam.PermitPath, vehicleAddParam.VehicleNo, vehicleAddParam.CreatedBy, uploadtype);
             }
             if (vehicleAddParam.VehiclePhotoPath != null)
             {
                 vehiclePath.VehiclePhotoPath = vehicleAddParam.VehiclePhotoPath.FileName;
                 files.Add(vehicleAddParam.VehiclePhotoPath);
                 uploadtype = "Vehicle";
-                vehiclePath.VehiclePhotoPath=photoupload(vehicleAddParam.VehiclePhotoPath, vehicleAddParam.VehicleNo, vehicleAddParam.CreatedBy, uploadtype);
+                vehiclePath.VehiclePhotoPath = photoupload(vehicleAddParam.VehiclePhotoPath, vehicleAddParam.VehicleNo, vehicleAddParam.CreatedBy, uploadtype);
             }
 
             return Ok(this.vehicle.VehicleAdd(vehicleAddParam, vehiclePath));
@@ -121,7 +143,7 @@ namespace Erpapi.Controllers
             if (file != null && file.Length > 0)
             {
                 string extension = Path.GetExtension(file.FileName);
-                string filePath = Path.Combine(folderpath, transporterId + "_" + vehicleNo + "_" + uploadtype+ extension);
+                string filePath = Path.Combine(folderpath, transporterId + "_" + vehicleNo + "_" + uploadtype + extension);
                 finalFilename = Path.GetFileName(filePath);
                 using (Stream fileStream = new FileStream(filePath, FileMode.Create))
                 {
@@ -133,12 +155,47 @@ namespace Erpapi.Controllers
             return finalFilename;
 
         }
+        [NonAction]
+        public string Paymentscreenshotupload(IFormFile file, string bidId, string transporterId, string filenamefrmDb)
+        {
+            string folderpath = Path.Combine(_env.ContentRootPath, "PaymentFiles");
+            if (!Directory.Exists(folderpath))
+            {
+                Directory.CreateDirectory(folderpath);
+            }
 
+            string finalFilename = "";
+
+
+            if (file != null && file.Length > 0)
+            {
+                string extension = Path.GetExtension(file.FileName);
+                string filePath = Path.Combine(folderpath, filenamefrmDb);
+                finalFilename = Path.GetFileName(filePath);
+                using (Stream fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    file.CopyTo(fileStream);
+                }
+            }
+
+
+            return finalFilename;
+
+        }
         [HttpPost]
         [Route("vehicleTrackingView")]
         public IActionResult VehicleTrackingView(VehicleTrackParam vehicleTrackParam)
         {
             var getData = this.vehicle.VehicleTrackView(vehicleTrackParam);
+
+            return Ok(getData);
+        }
+
+        [HttpPost]
+        [Route("paymentView")]
+        public IActionResult PaymentView(PaymentInsertParam paymentView)
+        {
+            var getData = this.vehicle.PaymentView(paymentView);
 
             return Ok(getData);
         }

@@ -16,5 +16,7 @@ namespace dbrepository
         VehicleViewData VehicleView(VehicleDetailParam vehicleDetailParam);
         ResponseStatus VehicleAdd(VehicleAddParam vehicleAddParam, VehiclePath vehiclePath);
         VehicleTrackDetailData VehicleTrackView(VehicleTrackParam vehicleTrackParam);
+        ResponseStatus BidPaymentAdd(PaymentInsertParam paymentInsertParam, string filePath);
+        PaymentViewData PaymentView(PaymentInsertParam paymentInsertParam);
     }
 }
