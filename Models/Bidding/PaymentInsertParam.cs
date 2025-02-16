@@ -19,7 +19,7 @@ namespace Models.Bidding
         public string? CreatedUser { get; set; }
         public string? TranType { get; set; }
         public IFormFile? FilePath { get; set; }
-       
+      
 
 
     }
