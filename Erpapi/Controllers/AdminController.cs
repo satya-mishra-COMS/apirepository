@@ -18,6 +18,7 @@ namespace Erpapi.Controllers
         {
             this.adminRepo= adminRepo;
             this.commonUtility = commonUtility;
+            // code comment byt satta
 
 
         }
