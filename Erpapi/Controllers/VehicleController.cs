@@ -78,7 +78,7 @@ namespace Erpapi.Controllers
             }
 
 
-            return Ok(this.vehicle.BidPaymentAdd(paymentInsertParam, filePathval));
+            return Ok(result);
         }
 
         [HttpPost]

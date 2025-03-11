@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("dbrepository")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6bc55e2754b34430e4558a6a223c204dff383c3f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+007367105334273b72ebcf1f0e5133157e0b0724")]
 [assembly: System.Reflection.AssemblyProductAttribute("dbrepository")]
 [assembly: System.Reflection.AssemblyTitleAttribute("dbrepository")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

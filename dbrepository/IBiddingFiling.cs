@@ -18,7 +18,9 @@ namespace dbrepository
         lovData GetLovByType(string lovtype);
         BiddingDetailData BiddingDetailsView(BiddingDetailviewParam biddingDetailviewParam);
         ResponseStatus UpdateFeedback(FeedbackParam feedbackParam);
-       
+        lovData GetLovByUser(string lovtype, string User);
+
+
 
 
 

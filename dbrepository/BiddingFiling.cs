@@ -288,6 +288,54 @@ namespace dbrepository
             return retData;
         }
 
+        public lovData GetLovByUser(string lovtype,string User)
+        {
+            var data = new ResponseStatus();
+            DataTable dt = new DataTable();
+            var retData = new lovData();
+            List<LovDto> lovDataList = new List<LovDto>();
+
+            try
+            {
+
+                MySqlParameter p0 = new MySqlParameter("vType", MySqlDbType.VarChar) { Value = lovtype };
+                MySqlParameter p1 = new MySqlParameter("vUser", MySqlDbType.VarChar) { Value = User };
+                var lstMySqlparam = new List<MySqlParameter>();
+                lstMySqlparam.AddRange(new List<MySqlParameter>() { p0 });
+                lstMySqlparam.AddRange(new List<MySqlParameter>() { p1 });
+
+
+                var ds = commonUtility.executeReaderProcedure("sp_lov_api_user_specific", lstMySqlparam, Convert.ToString(this.options.Value.DefaultConnection));
+
+                if (ds != null)
+                {
+                    if (ds.Tables.Count > 0)
+                    {
+                        //jsonString = JsonConvert.SerializeObject(ds.Tables);
+                        dt = ds.Tables[0];
+                        lovDataList = commonUtility.ConvertToList<LovDto>(dt);
+                    }
+
+
+
+                }
+
+                retData.data = lovDataList;
+                retData.StatusId = 1;
+                retData.StatusText = "Success";
+                //return jsonString;
+            }
+            catch (Exception ex)
+            {
+                retData.StatusId = 0;
+                retData.StatusText = ex.Message.ToString();
+                //jsonString = JsonConvert.SerializeObject(data);
+                dt.Rows.Add(data);
+                // throw;
+            }
+            return retData;
+        }
+
         public ResponseStatus UpdateFeedback(FeedbackParam feedbackParam)
         {
             var data = new ResponseStatus();

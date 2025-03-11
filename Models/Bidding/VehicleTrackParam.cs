@@ -24,6 +24,7 @@ namespace Models.Bidding
         public string? FdMobileNo { get; set; }
         public string? Fdlatitude { get; set; }
         public string? fdlongitude { get; set; }
+        public string TripStatus { get; set; }
 
 
     }

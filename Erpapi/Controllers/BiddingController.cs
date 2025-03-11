@@ -54,9 +54,17 @@ namespace Erpapi.Controllers
         }
         [HttpGet]
         [Route("getLovByType/{lovtype}")]
-        public async Task<IActionResult> GetDecryptedPassword(string lovtype)
+        public async Task<IActionResult> getLovByType(string lovtype)
         {
             return Ok(this.bidding.GetLovByType(lovtype));
+
+            //return this.bidding.GetLovByType(lovtype);
+        }
+        [HttpGet]
+        [Route("getLovByUser/{lovtype}/{lovuser}")]
+        public async Task<IActionResult> getLovByUser(string lovtype, string lovuser)
+        {
+            return Ok(this.bidding.GetLovByUser(lovtype, lovuser));
 
             //return this.bidding.GetLovByType(lovtype);
         }

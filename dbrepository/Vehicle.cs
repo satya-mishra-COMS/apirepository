@@ -322,6 +322,7 @@ namespace dbrepository
                 MySqlParameter p7 = new MySqlParameter("v_pcreateuser", MySqlDbType.VarChar) { Value = paymentInsertParam.CreatedUser };
                 MySqlParameter p8 = new MySqlParameter("v_ptrtype", MySqlDbType.VarChar) { Value = paymentInsertParam.TranType };
                 MySqlParameter p9 = new MySqlParameter("v_filepath", MySqlDbType.VarChar) { Value = string.Empty };
+                
 
 
 
