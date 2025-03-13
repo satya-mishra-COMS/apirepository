@@ -36,8 +36,10 @@ namespace Models.Bidding
         public string? fdStatus { get; set; }
         public string? fdCreatedBy { get; set; }
         public string? fdcreatedon { get; set; }
-        
-       
+
+        public string? fdfilename { get; set; }
+
+
     }
 
     public class PaymentViewData

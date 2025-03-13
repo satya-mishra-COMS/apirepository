@@ -158,7 +158,7 @@ namespace Erpapi.Controllers
         [NonAction]
         public string Paymentscreenshotupload(IFormFile file, string bidId, string transporterId, string filenamefrmDb)
         {
-            string folderpath = Path.Combine(_env.ContentRootPath, "PaymentFiles");
+            string folderpath = Path.Combine(_env.ContentRootPath, "DespatchCopy/PaymentFiles");
             if (!Directory.Exists(folderpath))
             {
                 Directory.CreateDirectory(folderpath);

@@ -62,7 +62,7 @@ namespace dbrepository
 
                 MySqlParameter p0 = new MySqlParameter("v_pcommodity", MySqlDbType.VarChar) { Value = biddingInsertUpdate.Commodity };
                 MySqlParameter p1 = new MySqlParameter("v_ppackagetype", MySqlDbType.VarChar) { Value = biddingInsertUpdate.Packagetype };
-                MySqlParameter p2 = new MySqlParameter("v_pQty", MySqlDbType.Int32) { Value = biddingInsertUpdate.Qty };
+                MySqlParameter p2 = new MySqlParameter("v_pQty", MySqlDbType.VarChar) { Value = biddingInsertUpdate.Qty };
                 MySqlParameter p3 = new MySqlParameter("v_pcargotype", MySqlDbType.VarChar) { Value = biddingInsertUpdate.Cargotype };
                 MySqlParameter p4 = new MySqlParameter("v_porigin", MySqlDbType.VarChar) { Value = biddingInsertUpdate.Origin };
                 MySqlParameter p5 = new MySqlParameter("v_pdestination", MySqlDbType.VarChar) { Value = biddingInsertUpdate.Destination };

@@ -10,7 +10,7 @@ namespace Models.Bidding
     {
         public string Commodity { get; set; }
         public string Packagetype { get; set; }
-        public int Qty { get; set; }
+        public string Qty { get; set; }
         public string Cargotype { get; set; }
         public string Origin { get; set; }
         public string Destination { get; set; }
